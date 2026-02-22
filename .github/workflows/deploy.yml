@@ -1,9 +1,9 @@
-name: Deploy to Target Org
+name: Validate and Deploy
 
 on:
   push:
     branches:
-      - master   # change this if your branch is different
+      - master   # change if your branch is different
 
 jobs:
   deploy:
@@ -26,6 +26,17 @@ jobs:
           echo "${{ secrets.SFDX_AUTH_URL_QA }}" > sfdx_auth_url.txt
           sf org login sfdx-url --sfdx-url-file sfdx_auth_url.txt --alias TargetOrg
 
+      # 🔎 STEP 1 – VALIDATE ONLY
+      - name: Validate Deployment
+        run: |
+          sf project deploy start \
+            --target-org TargetOrg \
+            --dry-run \
+            --wait 30
+
+      # 🚀 STEP 2 – REAL DEPLOY (only if validation succeeds)
       - name: Deploy to Target Org
         run: |
-          sf project deploy start --source-dir force-app --target-org TargetOrg --wait 20
+          sf project deploy start \
+            --target-org TargetOrg \
+            --wait 30
