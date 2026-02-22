@@ -2,6 +2,7 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
 	<types>
 		<members>helloWorld</members>
+		<members>lwcGithub</members>
 		<name>LightningComponentBundle</name>
 	</types>
 	<version>66.0</version>
