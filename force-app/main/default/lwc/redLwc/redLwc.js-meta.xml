@@ -7,4 +7,9 @@
 		<target>lightning__HomePage</target>
 		<target>lightning__RecordPage</target>
 	</targets>
+	 <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="recordId" type="String" label="Record Id"/>
+        </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>
