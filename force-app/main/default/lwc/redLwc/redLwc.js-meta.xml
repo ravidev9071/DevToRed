@@ -3,7 +3,6 @@
 	<isExposed>true</isExposed>
 	<apiVersion>66.0</apiVersion>
 	<targets>
-		<target>lightning__AppPage</target>
 		<target>lightning__HomePage</target>
 		<target>lightning__RecordPage</target>
 		<target>lightning__FlowScreen</target>
