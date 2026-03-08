@@ -2,8 +2,7 @@
   "type" : "sfdc_cms__site",
   "title" : "MilcronTest",
   "contentBody" : {
-    "authenticationType" : "AUTHENTICATED",
-    "geoBotsAllowed" : false
+    "authenticationType" : "AUTHENTICATED"
   },
   "urlName" : "milcrontest"
 }
