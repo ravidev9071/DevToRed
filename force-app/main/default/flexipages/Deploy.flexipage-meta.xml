@@ -7,6 +7,12 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>redLwc</componentName>
+                <identifier>c_redLwc</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>showLegacyActivityComposer</name>
                     <value>false</value>
