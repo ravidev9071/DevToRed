@@ -1,0 +1,134 @@
+<template>
+    <lightning-card>
+
+        <!-- LOGIN / REGISTER -->
+        <template if:false={isAuthenticated}>
+
+            <!-- LOGIN -->
+            <template if:false={isRegisterMode}>
+                <div class="auth-wrapper">
+                    <div class="auth-card">
+
+                        <div class="auth-header">
+                            <lightning-icon icon-name="utility:lock" size="large" class="lock-icon"></lightning-icon>
+                            <h2>Secure Access</h2>
+                            <p>Enter 4-digit password</p>
+                        </div>
+
+                        <lightning-input data-id="password" type="password" label="Password" maxlength="4"
+                            inputmode="numeric" pattern="[0-9]{4}"
+                            message-when-pattern-mismatch="Enter exactly 4 digits" required value={password}
+                            onchange={handlePasswordChange}>
+                        </lightning-input>
+
+
+                        <div class="auth-btn">
+                            <lightning-button label="Unlock" variant="brand" onclick={handleLoad}>
+                            </lightning-button>
+                        </div>
+
+                    </div>
+                </div>
+            </template>
+
+            <!-- REGISTER -->
+            <template if:true={isRegisterMode}>
+                <div class="auth-wrapper">
+                    <div class="auth-card">
+
+                        <div class="auth-header">
+                            <lightning-icon icon-name="utility:adduser" size="large" class="lock-icon"></lightning-icon>
+                            <h2>Create Password</h2>
+                            <p>Set your 4-digit password</p>
+                        </div>
+
+                        <div class="auth-input">
+                            <lightning-input type="password" label="Password" maxlength="4" pattern="[0-9]{4}"
+                                message-when-pattern-mismatch="Enter exactly 4 digits" required value={password}
+                                onchange={handlePasswordChange} disabled>
+                            </lightning-input>
+                        </div>
+
+                        <div class="auth-input">
+                            <lightning-input type="password" label="Confirm Password" maxlength="4" pattern="[0-9]{4}"
+                                message-when-pattern-mismatch="Enter exactly 4 digits" required value={confirmPassword}
+                                onchange={handleConfirmPasswordChange}>
+                            </lightning-input>
+                        </div>
+
+                        <div class="auth-btn">
+                            <lightning-button label="Create" variant="brand" onclick={handleRegister}>
+                            </lightning-button>
+                            <lightning-button label="Back" variant="neutral" onclick={handleBackToLogin}>
+                            </lightning-button>
+                        </div>
+
+                    </div>
+                </div>
+            </template>
+
+        </template>
+
+        <!-- EDITOR -->
+        <template if:true={isAuthenticated}>
+
+            <div class="header">
+                <h2>📝 Smart Content Editor</h2>
+                <span class={statusClass}>{modeLabel}</span>
+            </div>
+
+            <div class="container">
+
+                <div class="editor-box">
+                    <textarea class="custom-textarea" oninput={handleChange} disabled={isDisabled}>
+{content}
+                    </textarea>
+                </div>
+
+                <div class="info-bar">
+                    <span>Characters: {charCount} / 90000</span>
+
+                    <template if:true={lastSaved}>
+                        <div class="saved-time">
+                            Last saved: {lastSaved}
+                        </div>
+                    </template>
+
+                    <div class="progress-container">
+                        <div class="progress-bar" style={progressStyle}></div>
+                    </div>
+
+                    <template if:true={isOverLimit}>
+                        <span class="error">
+                            ⚠ Limit exceeded! Max 90,000 characters allowed
+                        </span>
+                    </template>
+                </div>
+                <!-- 👇 ADD HERE -->
+                <div class="password-display">
+                    🔑 Session Password: <strong>{password}</strong>
+                </div>
+                <div class="btns">
+                    <lightning-button icon-name="utility:download" label="Download" onclick={handleDownload}>
+                    </lightning-button>
+
+                    <lightning-button icon-name="utility:copy" label="Copy" onclick={handleCopy}></lightning-button>
+
+                    <lightning-button icon-name="utility:edit" label="Edit" onclick={handleEdit} disabled={isEditable}>
+                    </lightning-button>
+
+                    <lightning-button icon-name="utility:save" variant="brand" label="Save" onclick={handleSubmit}
+                        disabled={isSaveDisabled}></lightning-button>
+
+                    <lightning-button icon-name="utility:delete" label="Clear" onclick={handleClear}></lightning-button>
+
+                    <lightning-button icon-name="utility:back" variant="destructive" label="Back" onclick={handleBack}>
+                    </lightning-button>
+                </div>
+
+            </div>
+
+        </template>
+
+    </lightning-card>
+</template>
