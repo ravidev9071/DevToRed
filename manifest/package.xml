@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
 	<types>
-		<members>Deploy</members>
-		<name>FlexiPage</name>
+		<members>TextSyncController</members>
+		<name>ApexClass</name>
+	</types>
+	<types>
+		<members>Shared_Text__c.Content_2__c</members>
+		<members>Shared_Text__c.Content_3__c</members>
+		<members>Shared_Text__c.Content__c</members>
+		<members>Shared_Text__c.Password__c</members>
+		<name>CustomField</name>
+	</types>
+	<types>
+		<members>Shared_Text__c</members>
+		<name>CustomObject</name>
+	</types>
+	<types>
+		<members>richTextInput</members>
+		<name>LightningComponentBundle</name>
 	</types>
 	<version>66.0</version>
 </Package>
