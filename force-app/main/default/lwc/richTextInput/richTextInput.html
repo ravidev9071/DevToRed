@@ -10,22 +10,24 @@
                     <div class="auth-card">
 
                         <div class="auth-header">
-                            <lightning-icon icon-name="utility:lock" size="large" class="lock-icon"></lightning-icon>
+                            <lightning-icon icon-name="utility:lock" size="large"></lightning-icon>
                             <h2>Secure Access</h2>
                             <p>Enter 4-digit password</p>
                         </div>
 
-                        <lightning-input data-id="password" type="password" label="Password" maxlength="4"
-                            inputmode="numeric" pattern="[0-9]{4}"
-                            message-when-pattern-mismatch="Enter exactly 4 digits" required value={password}
+                        <lightning-input data-id="password" type="password"
+                            label="Password"
+                            placeholder="Enter 4-digit PIN"
+                            maxlength="4"
+                            inputmode="numeric"
+                            pattern="[0-9]{4}"
+                            required
+                            value={password}
                             onchange={handlePasswordChange}>
                         </lightning-input>
 
-
-                        <div class="auth-btn">
-                            <lightning-button label="Unlock" variant="brand" onclick={handleLoad}>
-                            </lightning-button>
-                        </div>
+                        <lightning-button label="Unlock" variant="brand" onclick={handleLoad}>
+                        </lightning-button>
 
                     </div>
                 </div>
@@ -36,32 +38,27 @@
                 <div class="auth-wrapper">
                     <div class="auth-card">
 
-                        <div class="auth-header">
-                            <lightning-icon icon-name="utility:adduser" size="large" class="lock-icon"></lightning-icon>
-                            <h2>Create Password</h2>
-                            <p>Set your 4-digit password</p>
-                        </div>
+                        <h2>Create Password</h2>
 
-                        <div class="auth-input">
-                            <lightning-input type="password" label="Password" maxlength="4" pattern="[0-9]{4}"
-                                message-when-pattern-mismatch="Enter exactly 4 digits" required value={password}
-                                onchange={handlePasswordChange} disabled>
-                            </lightning-input>
-                        </div>
+                        <lightning-input type="password" label="Password"
+                            maxlength="4"
+                            pattern="[0-9]{4}"
+                            value={password}
+                            disabled>
+                        </lightning-input>
 
-                        <div class="auth-input">
-                            <lightning-input type="password" label="Confirm Password" maxlength="4" pattern="[0-9]{4}"
-                                message-when-pattern-mismatch="Enter exactly 4 digits" required value={confirmPassword}
-                                onchange={handleConfirmPasswordChange}>
-                            </lightning-input>
-                        </div>
+                        <lightning-input type="password"
+                            label="Confirm Password"
+                            maxlength="4"
+                            inputmode="numeric"
+                            pattern="[0-9]{4}"
+                            placeholder="Enter 4-digit PIN"
+                            value={confirmPassword}
+                            onchange={handleConfirmPasswordChange}>
+                        </lightning-input>
 
-                        <div class="auth-btn">
-                            <lightning-button label="Create" variant="brand" onclick={handleRegister}>
-                            </lightning-button>
-                            <lightning-button label="Back" variant="neutral" onclick={handleBackToLogin}>
-                            </lightning-button>
-                        </div>
+                        <lightning-button label="Create" variant="brand" onclick={handleRegister}></lightning-button>
+                        <lightning-button label="Back" onclick={handleBackToLogin}></lightning-button>
 
                     </div>
                 </div>
@@ -69,61 +66,75 @@
 
         </template>
 
-        <!-- EDITOR -->
+        <!-- MAIN APP -->
         <template if:true={isAuthenticated}>
 
             <div class="header">
                 <h2>📝 Smart Content Editor</h2>
-                <span class={statusClass}>{modeLabel}</span>
+              <span class={statusClass}>
+    {modeLabel}
+</span>
             </div>
 
             <div class="container">
 
-                <div class="editor-box">
-                    <textarea class="custom-textarea" oninput={handleChange} disabled={isDisabled}>
-{content}
-                    </textarea>
-                </div>
+                <!-- TEXT AREA -->
+                <textarea class="custom-textarea"
+                    oninput={handleChange}
+                    disabled={isDisabled}>{content}</textarea>
 
+                <!-- INFO -->
                 <div class="info-bar">
-                    <span>Characters: {charCount} / 90000</span>
-
-                    <template if:true={lastSaved}>
-                        <div class="saved-time">
-                            Last saved: {lastSaved}
-                        </div>
-                    </template>
-
-                    <div class="progress-container">
-                        <div class="progress-bar" style={progressStyle}></div>
-                    </div>
-
-                    <template if:true={isOverLimit}>
-                        <span class="error">
-                            ⚠ Limit exceeded! Max 90,000 characters allowed
-                        </span>
-                    </template>
+                    Characters: {charCount} / 90000
                 </div>
-                <!-- 👇 ADD HERE -->
+
+                <!-- PASSWORD -->
                 <div class="password-display">
                     🔑 Session Password: <strong>{password}</strong>
                 </div>
+
+                <!-- FILE UPLOAD -->
+               <div class="file-upload">
+    <lightning-file-upload
+        label="Upload Files (Max 3)"
+        record-id={recordId}
+        multiple
+        accept=".pdf,.png,.jpg,.txt,.doc,.docx"
+        onuploadfinished={handleUploadFinished}>
+    </lightning-file-upload>
+
+    <template if:true={uploadedFiles}>
+        <div>
+            <p><strong>Uploaded Files:</strong></p>
+
+            <template for:each={uploadedFiles} for:item="file">
+                <div key={file.documentId}>
+                    📄 
+                    <a href={file.downloadUrl} target="_blank">
+                        {file.name}
+                    </a>
+                </div>
+            </template>
+        </div>
+    </template>
+</div>
+
+                <!-- BUTTONS -->
                 <div class="btns">
-                    <lightning-button icon-name="utility:download" label="Download" onclick={handleDownload}>
-                    </lightning-button>
 
-                    <lightning-button icon-name="utility:copy" label="Copy" onclick={handleCopy}></lightning-button>
+                    <lightning-button label="Download" onclick={handleDownload}></lightning-button>
+                    <lightning-button label="Copy" onclick={handleCopy}></lightning-button>
 
-                    <lightning-button icon-name="utility:edit" label="Edit" onclick={handleEdit} disabled={isEditable}>
-                    </lightning-button>
+                    <lightning-button label="Edit" onclick={handleEdit} disabled={isEditable}></lightning-button>
 
-                    <lightning-button icon-name="utility:save" variant="brand" label="Save" onclick={handleSubmit}
+                    <lightning-button label="Save" variant="brand"
+                        onclick={handleSubmit}
                         disabled={isSaveDisabled}></lightning-button>
 
-                    <lightning-button icon-name="utility:delete" label="Clear" onclick={handleClear}></lightning-button>
+                    <lightning-button label="Clear" onclick={handleClear}></lightning-button>
 
-                    <lightning-button icon-name="utility:back" variant="destructive" label="Back" onclick={handleBack}>
-                    </lightning-button>
+                    <lightning-button label="Back" variant="destructive" onclick={handleBack}></lightning-button>
+
                 </div>
 
             </div>
