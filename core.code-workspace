@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+      "path": "e:/DevToRed"
+    }
+  ],
+  "settings": {
+    "eslint.workingDirectories": [
+      "e:/DevToRed"
+    ],
+    "eslint.validate": [
+      "javascript",
+      "typescript"
+    ],
+    "eslint.options": {
+      "overrideConfigFile": "e:\\DevToRed\\.eslintrc.json"
+    }
+  }
+}

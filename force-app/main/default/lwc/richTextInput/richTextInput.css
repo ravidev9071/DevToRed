@@ -1,151 +1,9 @@
-.container {
-    padding: 1rem;
-}
-
-/* HEADER */
-.header {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px;
-    background: #f4f6f9;
-    border-radius: 10px;
-}
-
-/* BADGE */
-.badge {
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 12px;
-}
-
-.badge.edit {
-    background: #e3fcef;
-    color: #067d68;
-}
-
-.badge.view {
-    background: #f3f4f6;
-    color: #6b7280;
-}
-
-/* EDITOR */
-.editor-box {
-    margin-top: 10px;
-    padding: 12px;
-    border-radius: 12px;
-    background: #fafbfc;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-/* TEXTAREA */
-.custom-textarea {
-    width: 100%;
-    height: 500px;
-    font-size: 16px;
-    font-family: monospace;
-    line-height: 1.6;
-    border-radius: 8px;
-    padding: 10px;
-    border: 1px solid #d8dde6;
-    resize: vertical;
-}
-
-.custom-textarea:focus {
-    border: 1px solid #4f46e5;
-    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
-}
-
-/* INFO */
-.info-bar {
-    margin-top: 10px;
-}
-
-/* LAST SAVED */
-.saved-time {
-    font-size: 12px;
-    color: #6b7280;
-}
-
-/* PROGRESS */
-.progress-container {
-    width: 100%;
-    height: 6px;
-    background: #e5e7eb;
-    border-radius: 10px;
-    margin-top: 6px;
-}
-
-.progress-bar {
-    height: 100%;
-    border-radius: 10px;
-}
-
-/* ERROR */
-.error {
-    display: block;
-    color: red;
-    margin-top: 5px;
-    font-weight: bold;
-}
-
-/* BUTTONS */
-.btns {
-    margin-top: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 10px;
-}
-
-/* AUTH UI */
-.auth-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60vh;
-}
-
-.auth-card {
-    width: 360px;
-    padding: 30px;
-    border-radius: 18px;
-    background: linear-gradient(135deg, #ffffff, #f8fafc);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    transition: 0.3s;
-}
-
-.auth-card:hover {
-    transform: translateY(-5px);
-}
-
-.auth-header h2 {
-    margin: 10px 0 5px;
-}
-
-.auth-header p {
-    font-size: 13px;
-    color: #6b7280;
-}
-
-.lock-icon {
-    color: #4f46e5;
-}
-
-.auth-input {
-    margin-top: 20px;
-}
-
-.auth-btn {
-    margin-top: 20px;
-}
-
 /* BACKGROUND */
 .auth-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 80vh;
     background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
@@ -155,108 +13,101 @@
     padding: 30px;
     border-radius: 20px;
     width: 320px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     text-align: center;
-    animation: fadeIn 0.5s ease;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    animation: fadeIn 0.4s ease;
 }
 
 /* HEADER */
 .auth-header h2 {
     margin-top: 10px;
     font-size: 22px;
-    color: #333;
 }
 
 .auth-header p {
-    font-size: 14px;
     color: #777;
+    font-size: 13px;
 }
 
 /* ICON */
-.lock-icon {
+.icon {
     background: #667eea;
     border-radius: 50%;
     padding: 10px;
     color: white;
 }
 
-/* INPUT */
-.auth-input lightning-input,
-lightning-input {
+/* BUTTON */
+.full-btn {
+    width: 100%;
     margin-top: 15px;
 }
 
-/* BUTTON */
-.auth-btn {
-    margin-top: 20px;
-}
-
-.auth-btn lightning-button {
-    width: 100%;
-    margin-top: 10px;
-}
-
-/* HEADER BAR */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
-    color: white;
-    border-radius: 10px 10px 0 0;
-}
-
-/* BADGES */
-.badge {
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.badge.edit {
-    background: #22c55e;
-    color: white;
-}
-
-.badge.view {
-    background: #ef4444;
-    color: white;
-}
-
-/* EDITOR */
+/* CONTAINER */
 .container {
     padding: 20px;
     background: #f9fafb;
 }
 
-.editor-box {
+/* HEADER BAR */
+.header {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    padding: 12px;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* FILE CARD */
+.file-card {
+    padding: 15px;
+    margin: 10px 0;
     border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.file-card:hover {
+    transform: translateY(-3px);
+    background: #e0f2fe;
+}
+
+/* FILE TEXT */
+.file-title {
+    font-weight: bold;
+}
+
+.file-meta {
+    font-size: 12px;
+    color: #666;
+}
+
+/* EDITOR */
+.editor-box {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .custom-textarea {
     width: 100%;
     min-height: 300px;
-    padding: 15px;
     border: none;
-    outline: none;
+    padding: 15px;
+    font-family: monospace;
     font-size: 14px;
-    resize: vertical;
 }
 
-/* INFO BAR */
+/* INFO */
 .info-bar {
     margin-top: 10px;
     font-size: 12px;
-    color: #555;
 }
 
-/* PROGRESS BAR */
+/* PROGRESS */
 .progress-container {
-    width: 100%;
     height: 6px;
     background: #e5e7eb;
     border-radius: 10px;
@@ -265,21 +116,22 @@ lightning-input {
 
 .progress-bar {
     height: 100%;
+    background: #22c55e;
     border-radius: 10px;
-    transition: width 0.3s ease;
 }
 
 /* BUTTONS */
 .btns {
-    margin-top: 15px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    justify-content: flex-end; /* 👉 move to right */
+    gap: 10px;                 /* spacing between buttons */
+    margin-top: 10px;
+    flex-wrap: wrap;           /* responsive */
 }
 
 /* ERROR */
 .error {
-    color: #dc2626;
+    color: red;
     font-weight: bold;
 }
 
@@ -287,31 +139,62 @@ lightning-input {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(15px);
+        transform: translateY(10px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.password-display {
-    margin-top: 12px;
-    padding: 10px 15px;
-
-    background: linear-gradient(135deg, #fef3c7, #fde68a);
-    border: 1px solid #facc15;
-
+.file-card {
+    padding: 10px;
+    margin: 10px 0;
+    background: #fff;
     border-radius: 10px;
-    font-size: 13px;
-    color: #92400e;
-
-    display: inline-block;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    border: 1px solid #e5e7eb;
 }
 
-.password-display strong {
-    font-size: 14px;
-    color: #78350f;
+.file-card:hover {
+    background: #e0f2fe;
+}
+/* BASE HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+/* 🔵 READ ONLY (BLUE) */
+.view-bg {
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+}
+
+/* 🟢 EDIT MODE (GREEN) */
+.edit-bg {
+    background: linear-gradient(90deg, #16a34a, #22c55e);
+}
+
+/* COMMON BADGE */
+.badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+}
+
+/* 🟢 READ ONLY → GREEN */
+.badge.view {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+}
+
+/* 🔵 EDIT MODE (optional different color) */
+.badge.edit {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
 }
