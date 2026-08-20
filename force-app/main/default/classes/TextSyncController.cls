@@ -3,6 +3,7 @@ public without sharing class TextSyncController {
     @AuraEnabled
     public static Map<String, Object> getText(String password) {
         Map<String, Object> result = new Map<String, Object>();
+  //ravi
 //xyz
         if (String.isBlank(password)) {
             result.put('status', 'EMPTY');
@@ -11,7 +12,7 @@ public without sharing class TextSyncController {
 
         List<Shared_Text__c> records = [
             SELECT Id, Content__c, Content_2__c, Content_3__c
-            FROM Shared_Text__c 
+            FROM Shared_Text__c  
             WHERE Password__c = :password
             LIMIT 1
         ];
