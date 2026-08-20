@@ -4,6 +4,7 @@ public without sharing class TextSyncController {
     public static Map<String, Object> getText(String password) {
         Map<String, Object> result = new Map<String, Object>();
   //ravi
+//xyz
         if (String.isBlank(password)) {
             result.put('status', 'EMPTY');
             return result;
