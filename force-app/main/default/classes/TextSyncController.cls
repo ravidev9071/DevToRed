@@ -1,9 +1,7 @@
 public without sharing class TextSyncController {
 
-    // 🔹 GET TEXT + RECORD ID
     @AuraEnabled
     public static Map<String, Object> getText(String password) {
-
         Map<String, Object> result = new Map<String, Object>();
 
         if (String.isBlank(password)) {
