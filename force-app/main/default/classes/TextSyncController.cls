@@ -6,6 +6,7 @@ public without sharing class TextSyncController {
   //ravi
 //xyz
 //Aug
+//sep
         if (String.isBlank(password)) {
             result.put('status', 'EMPTY');
             return result;
