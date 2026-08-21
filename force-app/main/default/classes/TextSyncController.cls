@@ -12,6 +12,7 @@ public without sharing class TextSyncController {
 //sep
 //adfasfa
 //test
+/oo
         if (String.isBlank(password)) {
             result.put('status', 'EMPTY');
             return result;
