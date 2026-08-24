@@ -1,3 +1,6 @@
+/**
+ * @description this is used for testing purpose
+ */
 public without sharing class TextSyncController {
 
     @AuraEnabled
