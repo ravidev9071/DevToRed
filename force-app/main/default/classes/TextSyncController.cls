@@ -3,7 +3,6 @@ public without sharing class TextSyncController {
     @AuraEnabled
     public static Map<String, Object> getText(String password) {
         Map<String, Object> result = new Map<String, Object>();
-g
         if (String.isBlank(password)) {
             result.put('status', 'EMPTY');
             return result;
@@ -24,7 +23,6 @@ g
 
             Shared_Text__c rec = records[0];
 
-            // 🔗 Join all parts safely
             String fullContent = '';
 
             if (rec.Content__c != null) {
@@ -45,7 +43,6 @@ g
         return result;
     }
 
-    // 🔹 SAVE TEXT + RETURN RECORD ID
     @AuraEnabled
     public static Id saveText(String content, String password) {
 
@@ -53,14 +50,12 @@ g
             throw new AuraHandledException('Password required');
         }
 
-        // Prevent null issues
         if (content == null) {
             content = '';
         }
 
         Integer chunkSize = 30000;
 
-        // 🔪 Split content safely into 3 parts
         String part1 = '';
         String part2 = '';
         String part3 = '';
@@ -101,7 +96,6 @@ g
             );
         }
 
-        // ✅ Assign all parts
         record.Content__c   = part1;
         record.Content_2__c = part2;
         record.Content_3__c = part3;
@@ -112,7 +106,7 @@ g
             insert record;
         }
 
-        return record.Id; // 🔥 REQUIRED for file upload
+        return record.Id; 
     }
     @AuraEnabled
 public static List<Map<String, String>> getFiles(Id recordId) {
