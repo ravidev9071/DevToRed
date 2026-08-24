@@ -1,7 +1,6 @@
 /**
  * @description this is used for testing purpose
  * Author : Ravi Kumar
- * Author : ABC
  * Date :2026-08-09
  */
 public without sharing class TextSyncController {
