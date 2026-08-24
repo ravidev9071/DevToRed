@@ -3,15 +3,7 @@ public without sharing class TextSyncController {
     @AuraEnabled
     public static Map<String, Object> getText(String password) {
         Map<String, Object> result = new Map<String, Object>();
-//A
-//B
-//C
-  //ravi
-//xyz
-//Aug
-//sep
-//test
-//XYZ
+g
         if (String.isBlank(password)) {
             result.put('status', 'EMPTY');
             return result;
