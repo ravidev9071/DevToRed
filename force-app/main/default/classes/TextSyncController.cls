@@ -3,6 +3,7 @@
  * Author : Ravi Kumar
  * Date :2026-08-09
 * snv
+ * Created Date :
  */
 public without sharing class TextSyncController {
 
@@ -167,4 +168,8 @@ public static Id createRecord(String password) {
     return rec.Id;
 }
 }
+<<<<<<< HEAD
 //Add Last commit
+=======
+//End class
+>>>>>>> master
