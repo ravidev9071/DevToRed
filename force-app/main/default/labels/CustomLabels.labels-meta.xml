@@ -49,4 +49,11 @@
         <shortDescription>AccountAddress</shortDescription>
         <value>Account Address</value>
     </labels>
+    <labels>
+        <fullName>SalesTerritory</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SalesTerritory</shortDescription>
+        <value>Fedax Co</value>
+    </labels>
 </CustomLabels>
