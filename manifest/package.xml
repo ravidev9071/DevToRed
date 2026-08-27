@@ -12,6 +12,10 @@
 		<name>CustomField</name>
 	</types>
 	<types>
+		<members>AdminProfiles</members>
+		<name>CustomLabel</name>
+	</types>
+	<types>
 		<members>Shared_Text__c</members>
 		<name>CustomObject</name>
 	</types>
@@ -19,5 +23,5 @@
 		<members>richTextInput</members>
 		<name>LightningComponentBundle</name>
 	</types>
-	<version>66.0</version>
+	<version>67.0</version>
 </Package>

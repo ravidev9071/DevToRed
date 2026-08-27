@@ -15,15 +15,9 @@
                             <p>Enter 4-digit password</p>
                         </div>
 
-                        <lightning-input data-id="password" type="password"
-                            label="Password"
-                            placeholder="Enter 4-digit PIN"
-                            maxlength="4"
-                            inputmode="numeric"
-                            pattern="[0-9]{4}"
-                            required
-                            value={password}
-                            onchange={handlePasswordChange}>
+                        <lightning-input data-id="password" type="password" label="Password"
+                            placeholder="Enter 4-digit PIN" maxlength="4" inputmode="numeric" pattern="[0-9]{4}"
+                            required value={password} onchange={handlePasswordChange}>
                         </lightning-input>
 
                         <lightning-button label="Unlock" variant="brand" onclick={handleLoad}>
@@ -40,20 +34,12 @@
 
                         <h2>Create Password</h2>
 
-                        <lightning-input type="password" label="Password"
-                            maxlength="4"
-                            pattern="[0-9]{4}"
-                            value={password}
-                            disabled>
+                        <lightning-input type="password" label="Password" maxlength="4" pattern="[0-9]{4}"
+                            value={password} disabled>
                         </lightning-input>
 
-                        <lightning-input type="password"
-                            label="Confirm Password"
-                            maxlength="4"
-                            inputmode="numeric"
-                            pattern="[0-9]{4}"
-                            placeholder="Enter 4-digit PIN"
-                            value={confirmPassword}
+                        <lightning-input type="password" label="Confirm Password" maxlength="4" inputmode="numeric"
+                            pattern="[0-9]{4}" placeholder="Enter 4-digit PIN" value={confirmPassword}
                             onchange={handleConfirmPasswordChange}>
                         </lightning-input>
 
@@ -71,7 +57,7 @@
 
             <div class="header">
                 <h2>📝 Smart Content Editor</h2>
-              <span class={statusClass}>
+                <span class={statusClass}>
     {modeLabel}
 </span>
             </div>
@@ -94,30 +80,26 @@
                 </div>
 
                 <!-- FILE UPLOAD -->
-               <div class="file-upload">
-    <lightning-file-upload
-        label="Upload Files (Max 3)"
-        record-id={recordId}
-        multiple
-        accept=".pdf,.png,.jpg,.txt,.doc,.docx"
-        onuploadfinished={handleUploadFinished}>
-    </lightning-file-upload>
+                <div class="file-upload">
+                    <lightning-file-upload label="Upload Files (Max 3)" record-id={recordId} multiple
+                        accept=".pdf,.png,.jpg,.txt,.doc,.docx" onuploadfinished={handleUploadFinished}>
+                    </lightning-file-upload>
 
-    <template if:true={uploadedFiles}>
-        <div>
-            <p><strong>Uploaded Files:</strong></p>
+                    <template if:true={uploadedFiles}>
+                        <div>
+                            <p><strong>Uploaded Files:</strong></p>
 
-            <template for:each={uploadedFiles} for:item="file">
-                <div key={file.documentId}>
-                    📄 
-                    <a href={file.downloadUrl} target="_blank">
-                        {file.name}
-                    </a>
+                            <template for:each={uploadedFiles} for:item="file">
+                                <div key={file.documentId}>
+                                    📄
+                                    <a href={file.downloadUrl} target="_blank">
+                                        {file.name}
+                                    </a>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
                 </div>
-            </template>
-        </div>
-    </template>
-</div>
 
                 <!-- BUTTONS -->
                 <div class="btns">
@@ -127,9 +109,8 @@
 
                     <lightning-button label="Edit" onclick={handleEdit} disabled={isEditable}></lightning-button>
 
-                    <lightning-button label="Save" variant="brand"
-                        onclick={handleSubmit}
-                        disabled={isSaveDisabled}></lightning-button>
+                    <lightning-button label="Save" variant="brand" onclick={handleSubmit} disabled={isSaveDisabled}>
+                    </lightning-button>
 
                     <lightning-button label="Clear" onclick={handleClear}></lightning-button>
 
