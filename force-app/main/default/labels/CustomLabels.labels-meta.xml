@@ -56,4 +56,11 @@
         <shortDescription>SalesTerritory</shortDescription>
         <value>Fedax Co</value>
     </labels>
+     <labels>
+        <fullName>Sales Test</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SalesTerritory</shortDescription>
+        <value>Fedax Co</value>
+    </labels>
 </CustomLabels>
