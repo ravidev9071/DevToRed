@@ -7,4 +7,46 @@
         <shortDescription>AdminProfiles</shortDescription>
         <value>System Administrator,Admin clone profile</value>
     </labels>
+    <labels>
+        <fullName>AccountType</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AccountType</shortDescription>
+        <value>Account Type</value>
+    </labels>
+    <labels>
+        <fullName>AccountIndustry</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AccountIndustry</shortDescription>
+        <value>Account Industry</value>
+    </labels>
+    <labels>
+        <fullName>AccountPhone</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AccountPhone</shortDescription>
+        <value>Account Phone</value>
+    </labels>
+    <labels>
+        <fullName>AccountWebsite</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AccountWebsite</shortDescription>
+        <value>Account Website</value>
+    </labels>
+    <labels>
+        <fullName>AccountEmail</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AccountEmail</shortDescription>
+        <value>Account Email</value>
+    </labels>
+    <labels>
+        <fullName>AccountAddress</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AccountAddress</shortDescription>
+        <value>Account Address</value>
+    </labels>
 </CustomLabels>
