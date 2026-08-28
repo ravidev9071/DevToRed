@@ -71,6 +71,7 @@
         <value>Account Address</value>
     </labels>
     <labels>
+<<<<<<< HEAD
         <fullName>AccountCity</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -680,10 +681,13 @@
         <value>User Status</value>
     </labels>
     <labels>
+=======
+>>>>>>> master
         <fullName>SalesTerritory</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>SalesTerritory</shortDescription>
+<<<<<<< HEAD
         <value>Sales Territory</value>
     </labels>
     <labels>
@@ -70006,5 +70010,15 @@
         <protected>true</protected>
         <shortDescription>EditProductHeader09868</shortDescription>
         <value>Edit Product Header</value>
+=======
+        <value>Fedax Co</value>
+    </labels>
+     <labels>
+        <fullName>Sales Test</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SalesTerritory</shortDescription>
+        <value>Fedax Co</value>
+>>>>>>> master
     </labels>
 </CustomLabels>
