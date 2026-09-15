@@ -4,7 +4,7 @@ import getText from '@salesforce/apex/TextSyncController.getText';
 import createRecord from '@salesforce/apex/TextSyncController.createRecord';
 import getFiles from '@salesforce/apex/TextSyncController.getFiles';
 export default class RichTextInput extends LightningElement {
-
+//ravi
     @track content = '';
     @track charCount = 0;
     @track password = '';
